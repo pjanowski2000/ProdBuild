@@ -8,9 +8,9 @@ node_js:
 
 before_install:
   - docker build -f Dockerfile.dev -t travidev  .
-  - docker run travidev
+  - docker run  -d -p 1337:8080 travidev
   - docker build -f Dockerfile.prod -t traviprod  .
-  - docker run traviprod
+  - docker run -d -p 1330:8080 traviprod
   - docker ps -a
 
 install:
