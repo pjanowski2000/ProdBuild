@@ -9,7 +9,7 @@ node_js:
 before_install:
   - docker build -f Dockerfile.dev -t travidev  .
   - docker run travidev
-  - docker build -f Dockerfile -t traviprod  .
+  - docker build -f Dockerfile.prod -t traviprod  .
   - docker run traviprod
   - docker ps -a
 
